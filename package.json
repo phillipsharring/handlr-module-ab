@@ -1,0 +1,29 @@
+{
+  "name": "@phillipsharring/handlr-module-ab",
+  "version": "0.1.0",
+  "description": "A/B testing module for handlr apps -- deterministic variant assignment, {{#ab}} Handlebars helper, and conversion capture.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./helpers": "./src/helpers.js",
+    "./runtime": "./src/runtime.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "handlr",
+    "module",
+    "ab-testing",
+    "experiments"
+  ],
+  "peerDependencies": {
+    "@phillipsharring/handlr-frontend": "^0.7"
+  },
+  "author": "Phillip Harrington <phillip@phillipharrington.com> (https://phillipharrington.com/)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
