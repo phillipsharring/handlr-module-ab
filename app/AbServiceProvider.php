@@ -34,9 +34,4 @@ class AbServiceProvider extends ServiceProvider
     {
         return [dirname(__DIR__) . '/migrations'];
     }
-
-    public function seedPaths(): array
-    {
-        return [dirname(__DIR__) . '/seeds'];
-    }
 }

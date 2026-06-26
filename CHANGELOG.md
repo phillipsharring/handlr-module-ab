@@ -13,7 +13,8 @@ All notable changes to `handlr-module-ab` are documented here.
   list, create, results, update), `AbTestsTable` / `AbEventsTable` / `AbResultsQuery`,
   domain records, and `AbEventCapturedEvent`.
 - `AbServiceProvider` — self-registers routes (on the `api.public` / `api.admin`
-  junctions), migrations, and the starter seed.
+  junctions) and migrations. Seed data stays app-owned (the module ships
+  schema, not opinionated rows).
 - `ab_tests`, `ab_events`, and the aggregate `event_date`/`count` migrations.
 - Frontend: `registerAbHelpers` ({{#ab}} Handlebars helper) and the client
   runtime (`ab.init()`, `capture`, `getAssignments`).
