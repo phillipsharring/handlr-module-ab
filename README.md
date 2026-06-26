@@ -9,7 +9,7 @@ composer require phillipsharring/handlr-module-ab
 npm install @phillipsharring/handlr-module-ab
 ```
 
-One module, two manifests, lockstep version. Composer installs the PHP backend (service provider, pipes, tables, migrations, seed); npm installs the frontend (Handlebars helper + client runtime).
+One module, two manifests, lockstep version. Composer installs the PHP backend (service provider, pipes, tables, migrations); npm installs the frontend (Handlebars helper + client runtime).
 
 ## Setup
 
@@ -22,7 +22,7 @@ One module, two manifests, lockstep version. Composer installs the PHP backend (
 ],
 ```
 
-This auto-registers the routes (under the app's existing `api.public` and `api.admin` junctions), the migrations, and the seed.
+This auto-registers the routes (under the app's existing `api.public` and `api.admin` junctions) and the migrations. Seed data (which tests exist) stays app-owned.
 
 **2. Wire the frontend** in your app entry (e.g. `frontend/src/app.js`):
 
@@ -56,7 +56,7 @@ Routes registered on the app's junctions:
 | PATCH | `/api/admin/ab/{id}` | `api.admin` | `PatchUpdateAbTest` |
 
 - `AbService` — deterministic `assignVariant()` (crc32 of session + test name), assignment lookup, and event recording.
-- `ab_tests` / `ab_events` table migrations (auto-discovered via `migrationPaths()`); a starter seed via `seedPaths()`.
+- `ab_tests` / `ab_events` table migrations (auto-discovered via `migrationPaths()`). Seed data (which tests to run) is app-owned — define it in your app's seeds against `Handlr\Module\Ab\Data\AbTestsTable`.
 - Dispatches the `ab.event.captured` event (`AbEventCapturedEvent`) on each capture, so apps can listen.
 
 ### Frontend
