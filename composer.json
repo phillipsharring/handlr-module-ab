@@ -1,0 +1,22 @@
+{
+    "name": "phillipsharring/handlr-module-ab",
+    "description": "A/B testing module for handlr apps -- deterministic variant assignment, event capture, and results.",
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Phillip Harrington",
+            "email": "phillip@phillipharrington.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.4",
+        "phillipsharring/handlr-backend": "^0.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Handlr\\Module\\Ab\\": "app/"
+        }
+    }
+}

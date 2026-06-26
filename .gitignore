@@ -1,0 +1,6 @@
+node_modules
+vendor
+composer.lock
+.idea
+.DS_Store
+*.tgz
