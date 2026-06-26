@@ -85,8 +85,8 @@ Markup conventions:
 
 ## Requires
 
-- `phillipsharring/handlr-backend` >= 0.7
-- `@phillipsharring/handlr-frontend` >= 0.7 (peer — provides `apiFetch` and the boosted-nav lifecycle hooks)
+- `phillipsharring/handlr-backend` ^0.8 (the framework release where A/B was extracted out of core)
+- `@phillipsharring/handlr-frontend` ^0.8 (peer — provides `apiFetch` and the boosted-nav lifecycle hooks)
 
 ## License
 

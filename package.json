@@ -19,7 +19,7 @@
     "experiments"
   ],
   "peerDependencies": {
-    "@phillipsharring/handlr-frontend": "^0.7"
+    "@phillipsharring/handlr-frontend": "^0.8"
   },
   "author": "Phillip Harrington <phillip@phillipharrington.com> (https://phillipharrington.com/)",
   "license": "MIT",
