@@ -21,6 +21,9 @@
   "peerDependencies": {
     "@phillipsharring/handlr-frontend": "^0.8 || ^0.9"
   },
+  "scripts": {
+    "test": "node ../check-browser-safety.mjs ."
+  },
   "author": "Phillip Harrington <phillip@phillipharrington.com> (https://phillipharrington.com/)",
   "license": "MIT",
   "engines": {
