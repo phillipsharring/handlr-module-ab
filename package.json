@@ -1,6 +1,6 @@
 {
   "name": "@phillipsharring/handlr-module-ab",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A/B testing module for handlr apps -- deterministic variant assignment, {{#ab}} Handlebars helper, and conversion capture.",
   "type": "module",
   "main": "src/index.js",
@@ -19,7 +19,7 @@
     "experiments"
   ],
   "peerDependencies": {
-    "@phillipsharring/handlr-frontend": "^0.8 || ^0.9"
+    "@phillipsharring/handlr-frontend": ">=0.8.0 <1.0.0"
   },
   "scripts": {
     "test": "node ../check-browser-safety.mjs ."
