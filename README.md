@@ -2,6 +2,8 @@
 
 A/B testing module for [handlr](https://github.com/phillipsharring/handlr-mono) apps. Deterministic, session-scoped variant assignment; a `{{#ab}}` Handlebars helper for variant markup; and conversion capture with aggregated daily counts.
 
+📖 **Documentation:** https://phillipsharring.github.io/handlr-mono/modules/ab
+
 ## Install
 
 ```bash
