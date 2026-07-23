@@ -13,7 +13,7 @@
 // delegated click handler (handlr-build's initModules() does this for the
 // `ab` module object exported from ./index.js).
 
-import { apiFetch, onPageLoad, onAfterSettle } from '@phillipsharring/handlr-frontend';
+import { apiFetch, onPageLoad, onAfterSettle, onClick, registerAction } from '@phillipsharring/handlr-frontend';
 
 let assignments = null;
 let fetched = false;
@@ -95,8 +95,9 @@ let started = false;
 
 /**
  * Wire up the A/B runtime: fetch assignments on page load + after each
- * boosted navigation, and delegate clicks for data-ab-capture elements.
- * Idempotent — safe to call more than once.
+ * boosted navigation, delegate clicks for data-ab-capture elements, and
+ * register the admin `ab-new-test` action. Idempotent — safe to call
+ * more than once.
  */
 export function init() {
     if (started) return;
@@ -105,9 +106,19 @@ export function init() {
     onPageLoad(fetchAssignments);
     onAfterSettle(fetchAssignments);
 
-    document.addEventListener('click', function (e) {
-        var el = e.target.closest('[data-ab-capture]');
-        if (!el) return;
+    // Conversion tracking: data-ab-capture="event-name" on any clickable.
+    onClick('[data-ab-capture]', function (el) {
         capture(el.getAttribute('data-ab-capture'));
+    });
+
+    // Admin: the "New Test" button (data-action="ab-new-test") opens the
+    // create-test modal via the host app's modal API.
+    registerAction('ab-new-test', function () {
+        if (window.App && window.App.ui && typeof window.App.ui.openFormModal === 'function') {
+            window.App.ui.openFormModal({
+                templateId: 'create-ab-test-template',
+                title: 'New A/B Test',
+            });
+        }
     });
 }

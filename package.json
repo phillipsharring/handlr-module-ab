@@ -1,6 +1,6 @@
 {
   "name": "@phillipsharring/handlr-module-ab",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A/B testing module for handlr apps -- deterministic variant assignment, {{#ab}} Handlebars helper, and conversion capture.",
   "type": "module",
   "main": "src/index.js",
@@ -10,7 +10,8 @@
     "./runtime": "./src/runtime.js"
   },
   "files": [
-    "src"
+    "src",
+    "pages"
   ],
   "keywords": [
     "handlr",

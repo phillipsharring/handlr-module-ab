@@ -13,8 +13,19 @@ import { init } from './runtime.js';
 export { registerAbHelpers } from './helpers.js';
 export { capture, getAssignments } from './runtime.js';
 
+const root = new URL('..', import.meta.url).pathname;
+
 export const ab = {
     name: 'ab',
+    pagesDir: root + 'pages',
+
+    defaults: {
+        adminNav: {
+            label: 'A/B Tests',
+            path: '/admin/ab/',
+            permission: 'admin.access',
+        },
+    },
 
     config: {},
 
