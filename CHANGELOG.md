@@ -2,6 +2,15 @@
 
 All notable changes to `handlr-module-ab` are documented here.
 
+## [0.2.1] - 2026-07-23
+
+### Fixed
+
+- Correct the `peerDependencies` range for `@phillipsharring/handlr-frontend` to
+  `>=0.11.0 <1.0.0`. 0.2.0 shipped with the stale `>=0.8.0` range, but the runtime
+  imports `onClick` / `registerAction` (added in handlr-frontend 0.11.0) — installing
+  against an older frontend would fail at `init()`.
+
 ## [0.2.0] - 2026-07-22
 
 ### Added
@@ -23,11 +32,9 @@ All notable changes to `handlr-module-ab` are documented here.
   runtime) instead of an inline `addEventListener`. The `[id]` results page keeps
   its own scoped click delegation but renames `data-action` → `data-ab-action` to
   stay out of the global action-registry namespace.
-- **BREAKING (peer):** the runtime now imports `onClick` / `registerAction` from
-  `@phillipsharring/handlr-frontend`, which exist only in the ADR-0003 behavior-layer
-  release. The `peerDependencies` range **must be tightened** from `>=0.8.0 <1.0.0` to
-  `>=<behavior-layer-minor> <1.0.0` at publish — older frontends lack those exports and
-  the runtime `init()` would fail.
+- **Requires handlr-frontend 0.11.0+:** the runtime now imports `onClick` /
+  `registerAction` from `@phillipsharring/handlr-frontend` (added in 0.11.0). See 0.2.1
+  for the `peerDependencies` correction.
 
 ## [0.1.0] - 2026-06-25
 
